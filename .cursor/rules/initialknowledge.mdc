@@ -1,0 +1,122 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# LinkedIn Banner Editor Extension - Implementation Plan
+
+## Project Overview
+We're building a browser extension that allows users to create custom LinkedIn banners with a Figma-like editor. The extension injects directly into LinkedIn profiles, providing live preview while users edit through a sidebar interface.
+
+## Tech Stack
+- **Frontend**: React + TypeScript
+- **Build Tool**: Vite
+- **CSS Framework**: Tailwind CSS v4
+- **State Management**: Redux Toolkit
+- **Database**: Supabase (PostgreSQL)
+
+## Implementation Plan
+
+### Phase 1: Foundation & Basic Injection (1-2 weeks)
+1. **Project Setup**
+   - Initialize Vite project with React/TypeScript
+   - Configure Tailwind CSS v4 with proper isolation
+   - Set up extension manifest and structure
+   - Create Shadow DOM injection mechanism
+
+2. **"Hello World" Banner**
+   - Create basic banner component
+   - Implement Shadow DOM style isolation
+   - Test injection on LinkedIn profiles
+   - Verify styles work correctly in content script context
+
+3. **Editor UI Scaffold**
+   - Create sidebar layout according to wireframe
+   - Implement tab navigation system
+   - Set up Redux store for editor state
+   - Create basic state synchronization between editor and preview
+
+### Phase 2: Core Editing Features (2-3 weeks)
+1. **Background System**
+   - Implement color picker component
+   - Create gradient editor with angle control
+   - Add random background generator
+   - Build background preview component
+
+2. **Text Editing System**
+   - Implement text input fields (title, content, CTA)
+   - Create text formatting toolbar (B/I/U/H/font)
+   - Build text highlight functionality
+   - Implement font selection and sizing
+
+3. **Position Controls**
+   - Create position selector for text elements
+   - Implement alignment options
+   - Add spacing/padding controls
+   - Build z-index management for layering
+
+### Phase 3: Media & Advanced Features (2-3 weeks)
+1. **Media Upload**
+   - Implement photo upload component
+   - Create logo upload and positioning
+   - Add image cropping and resizing
+   - Build image filters and adjustments
+
+2. **Template System**
+   - Create template data structure
+   - Implement template saving mechanism
+   - Build preview generation for templates
+   - Create template application functionality
+
+3. **Supabase Integration**
+   - Set up Supabase client and authentication
+   - Create database schema for templates
+   - Implement CRUD operations
+   - Add user account management
+
+### Phase 4: Polish & Performance (1-2 weeks)
+1. **User Experience Improvements**
+   - Add keyboard shortcuts
+   - Implement undo/redo functionality
+   - Create user onboarding flow
+   - Add tooltips and helper text
+
+2. **Performance Optimization**
+   - Optimize render cycles with memoization
+   - Implement lazy loading for components
+   - Reduce bundle size with code splitting
+   - Add caching for frequently used data
+
+3. **Testing & Refinement**
+   - Conduct user testing
+   - Fix identified issues
+   - Optimize for different LinkedIn layouts
+   - Ensure cross-browser compatibility
+
+### Phase 5: Deployment & Maintenance (Ongoing)
+1. **Extension Packaging**
+   - Prepare for Chrome Web Store submission
+   - Create Firefox add-on package
+   - Write store descriptions and screenshots
+   - Implement analytics for usage tracking
+
+2. **Documentation**
+   - Create user documentation
+   - Write developer documentation
+   - Prepare maintenance guides
+   - Document API endpoints and data structures
+
+## Immediate Next Steps
+1. Set up project with proper build configuration
+2. Create Shadow DOM injection mechanism
+3. Implement basic sidebar UI following the wireframe
+4. Build color and gradient picker components
+5. Create text editing component with basic formatting
+
+## Technical Challenges & Solutions
+- **CSS Isolation**: Use Shadow DOM for style encapsulation
+- **State Management**: Redux for complex editor state with slices for different features
+- **Live Preview**: Mutation observers to sync changes immediately to preview
+- **Performance**: Optimize render cycles to maintain smooth editing experience
+
+This plan provides a structured approach to building the LinkedIn Banner Editor Extension, with clear phases and milestones that align with the wireframe design you've provided.
